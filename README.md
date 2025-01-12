@@ -47,7 +47,8 @@ DB_PASSWORD=tu_contraseña_de_root
 
 - Para agilizar las operaciones CRUD se han utilizado ViewSets para gestionar las tareas, pero dos API View para gestionar usuarios
 - Se emplean herramientas para la creación y autenticación de usuarios
-- Se trata de un proyecto portable. Usando un archivo `.env` podemos configurar las credenciales de la BBDD de forma segura y flexible sin necesidad de modificar el código fuente. Además el ficherpo `requirements.txt` facilita la creación de entornos virtuales para la ejecución del proyecto en cualquier sistema.
+- Se trata de un proyecto **portable**. Usando un archivo `.env` podemos configurar las credenciales de la BBDD de forma segura y flexible sin necesidad de modificar el código fuente. Además el ficherpo `requirements.txt` facilita la creación de entornos virtuales para la ejecución del proyecto en cualquier sistema.
+- Además, la aplicación es **escalable** gracias a la capacidad de MySQL, que posibilita manejar tráfico y volumen de datos de manera más eficiente que SQLite
 
 ##Posibles futuras iteraciones
 
