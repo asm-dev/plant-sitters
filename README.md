@@ -59,7 +59,7 @@ DB_PASSWORD=contraseña_del_usuario_root
 - Se emplean herramientas para la creación y autenticación de usuarios.
 - Se trata de un proyecto **portable**. Usando un archivo `.env` podemos configurar las credenciales de la BBDD de forma segura y flexible sin necesidad de modificar el código fuente. Además el fichero `requirements.txt` facilita la creación de entornos virtuales para la ejecución del proyecto en cualquier sistema.
 - Además, la aplicación es **escalable** gracias a la capacidad de **MySQL**, que posibilita manejar tráfico y volumen de datos de manera más eficiente que SQLite.
-- Se emplean los grupos Requester y Plantsitter, permitiendo así definir capacidades y permisos dentro del sistema en función del rol del usuario.
+- Se emplean los **grupos de usuarios** Requester y Plantsitter, permitiendo así definir capacidades y permisos dentro del sistema en función del rol del usuario.
 
 &nbsp;
 
