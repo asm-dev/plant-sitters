@@ -38,11 +38,11 @@ GRANT ALL PRIVILEGES ON plantsitters_db.* TO 'ejemplo_de_usuario'@'localhost';
 FLUSH PRIVILEGES
 ```
 
-5. Actualiza el **environment** desde el fichero `.env` en la raíz del proyecto con los datos de tu BBDD
+5. Actualiza el **environment** desde el fichero `.env` en la raíz del proyecto con los datos de un usuario que tenga permisos para la BBDD. Es decir, el usuario root, o el que hayas creado en el paso anterior.
 
 ```
 DB_USER=root
-DB_PASSWORD=tu_contraseña_de_root
+DB_PASSWORD=contraseña_del_usuario_root
 ```
 
 6. Aplica las **migraciones** para crear las tablas de la BBDD en MySQL: `python manage.py migrate`
