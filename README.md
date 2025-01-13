@@ -29,6 +29,15 @@ CREATE DATABASE plantsitters_db;
 EXIT;
 ```
 
+(_Opcional_) Deberías poder acceder a la BBDD con tu usuario root. No obstante, recomendamos crear un usuario específico para el manejo de la misma:
+
+```
+mysql -u root -p
+CREATE USER 'ejemplo_de_usuario'@'localhost' IDENTIFIED BY 'contraseña_que_decidas';
+GRANT ALL PRIVILEGES ON plantsitters_db.* TO 'ejemplo_de_usuario'@'localhost';
+FLUSH PRIVILEGES
+```
+
 5. Actualiza el **environment** desde el fichero `.env` en la raíz del proyecto con los datos de tu BBDD
 
 ```
