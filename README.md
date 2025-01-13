@@ -53,9 +53,6 @@ DB_PASSWORD=tu_contraseña_de_root
 
 &nbsp;
 
-## Posibles futuras iteraciones
+## Ejemplos de uso
 
-- Generar una vista que permita a los usuarios buscar y asignar cuidadores
-- Implementar un sistema de pago
-- Desarrollar una interfaz visual para la aplicación (frontend)
-- Implementar un sistema de notificaciones para avisar a usuarios cuando se asignen o completen tareas
+- Auth token?
