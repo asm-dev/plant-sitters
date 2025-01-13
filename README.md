@@ -16,12 +16,12 @@ Este repositorio alberga el ecosistema back necesario para hacer posible esta ac
 
 - Python 3.9
 - MySQL instalado y en funcionamiento
+- (*Recomendado*) DBeaver para visualizar la base de datos (BBDD) 
 
 1. **Clona** el repositorio en tu máquina local
-2. Crea un **entorno virtual** (si no lo tienes ya). Recomiend Anaconda, pero también puedes usar venv
+2. Crea un **entorno virtual** (si no lo tienes ya). Recomiendo Anaconda, pero también puedes usar venv
 3. Instala las **dependencias** `pip install -r requirements.txt`
-4. Crea un **superusuario** Django. Puedes hacerlo manualmente desde la shell o `python manage.py createsuperuser`, pero hemos creado un comando personalizado que puede ayudarte si no quieres complicaciones: `python manage.py create_super_user`
-5. Crea la **base de datos** (BBDD) MySQL:
+4. Crea la **base de datos** (BBDD) MySQL:
 
 ```
 mysql -u root -p
@@ -46,8 +46,9 @@ DB_PASSWORD=contraseña_del_usuario_root
 ```
 
 6. Aplica las **migraciones** para crear las tablas de la BBDD en MySQL: `python manage.py migrate`
-7. **Inicia el servidor** de desarrollo `python manage.py runserver`
-8. Diviértete probando la aplicación en `http://127.0.0.1:8000/`
+7. Crea un **superusuario** Django. Puedes hacerlo manualmente desde la shell o `python manage.py createsuperuser`, pero hemos creado un comando personalizado que puede ayudarte si no quieres complicaciones: `python manage.py create_super_user`
+8. **Inicia el servidor** de desarrollo `python manage.py runserver`
+9. Diviértete probando la aplicación en `http://127.0.0.1:8000/`
 
 &nbsp;
 
