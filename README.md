@@ -65,4 +65,10 @@ DB_PASSWORD=contraseña_del_usuario_root
 
 ## Ejemplos de uso
 
+**Agregamos una tarea desde /admin a la BBDD**
+
+![image](https://github.com/user-attachments/assets/e299da3a-d369-4105-b7b8-90cfc2ae6c39)
+
+
+
 - Auth token?
