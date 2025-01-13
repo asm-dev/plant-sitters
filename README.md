@@ -16,7 +16,7 @@ Este repositorio alberga el ecosistema back necesario para hacer posible esta ac
 
 - Python 3.9
 - MySQL instalado y en funcionamiento
-- (*Recomendado*) DBeaver para visualizar la base de datos (BBDD) 
+- (*Recomendado*) DBeaver para visualizar la BBDD 
 
 1. **Clona** el repositorio en tu máquina local
 2. Crea un **entorno virtual** (si no lo tienes ya). Recomiendo Anaconda, pero también puedes usar venv
@@ -65,7 +65,7 @@ DB_PASSWORD=contraseña_del_usuario_root
 
 ## Ejemplos de uso
 
-**Agregamos una tarea desde /admin a la BBDD**
+*Creación de "tareas" desde `/admin` a la BBDD*
 
 ![image](https://github.com/user-attachments/assets/e299da3a-d369-4105-b7b8-90cfc2ae6c39)
 
