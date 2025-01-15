@@ -27,7 +27,7 @@ class TaskRetrieveUpdateView(RetrieveUpdateAPIView):
 class TaskRetrieveDestroyView(RetrieveDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    permission_classes = [IsAdminOrOwner]
+    permission_classes = [IsAuthenticated, IsAdminOrOwner]
 
 class TaskCustomView(GenericAPIView, ListModelMixin, CreateModelMixin):
     queryset = Task.objects.filter(is_completed=False)
