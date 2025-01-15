@@ -48,7 +48,9 @@ DB_PASSWORD=contraseña_del_usuario_root
 6. Aplica las **migraciones** para crear las tablas de la BBDD en MySQL: `python manage.py migrate`
 7. Crea un **superusuario** Django. Puedes hacerlo manualmente desde la shell o `python manage.py createsuperuser`, pero hemos creado un comando personalizado que puede ayudarte si no quieres complicaciones: `python manage.py create_super_user`
 8. **Inicia el servidor** de desarrollo `python manage.py runserver`
-9. Diviértete probando la aplicación en `http://127.0.0.1:8000/`
+9. Diviértete probando el servidor en `http://127.0.0.1:8000/`
+
+> Nota: Para poder gestionar tareas es necesario estar autenticado. Para ello, habrás de añadir un **token** en tus solicitudes al servidor. Puedes conseguirlo facilmente ingresando tus datos de usuario en `api-token-auth/`. También ten en cuenta que para poder destruirlas, será necesario ser admin o el usuario que haya creado las tareas.
 
 &nbsp;
 
@@ -68,3 +70,7 @@ DB_PASSWORD=contraseña_del_usuario_root
 _Creación de "tareas" desde `/admin` a la BBDD_
 
 ![image](https://github.com/user-attachments/assets/e299da3a-d369-4105-b7b8-90cfc2ae6c39)
+
+_Prueba de uso de endpoint para updatar tareas desde `/api/`_
+
+![image](https://github.com/user-attachments/assets/19d2bcb6-42a3-49f1-b7c7-5484bcbb599e)
