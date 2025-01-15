@@ -75,6 +75,6 @@ _Creación de "tareas" desde `/admin` a la BBDD_
 
 ![image](https://github.com/user-attachments/assets/e299da3a-d369-4105-b7b8-90cfc2ae6c39)
 
-_Prueba de uso de endpoint para updatar tareas desde `/api/`_
+_Prueba de uso de endpoint para updatar tareas desde `/api`_
 
 ![image](https://github.com/user-attachments/assets/19d2bcb6-42a3-49f1-b7c7-5484bcbb599e)
