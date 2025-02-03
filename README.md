@@ -58,14 +58,13 @@ DB_PASSWORD=contraseña_del_usuario_root
 
 &nbsp;
 
-## Detalles técnicos
+## Detalles técnicos clave
 
-- Para agilizar las operaciones CRUD se han utilizado tanto **ViewSets** como **API Views** para gestionar las tareas y los usuarios, escogiendo una u otra en función de las necesidades.
-- Existe una **API View propia** para vincular los modelos de usuario y tarea. Permite devolver todas las tareas asociadas a un usuario específico.
-- Se emplean herramientas para la creación y autenticación de usuarios.
+- Para agilizar las operaciones CRUD se han utilizado tanto **ViewSets** como **vistas genéricas** para gestionar tareas y usuarios.
+- Existe una **API View propia** que vincula los modelos de usuario y tarea. Permite devolver todas las tareas asociadas a un usuario específico.
 - Se trata de un proyecto **portable**. Usando un archivo `.env` podemos configurar las credenciales de la BBDD de forma segura y flexible sin necesidad de modificar el código fuente. Además el fichero `requirements.txt` facilita la creación de entornos virtuales para la ejecución del proyecto en cualquier sistema.
-- Además, la aplicación es **escalable** gracias a la capacidad de **MySQL**, que posibilita manejar tráfico y volumen de datos de manera más eficiente que SQLite.
-- Se emplean los **grupos de usuarios** Requester y Plantsitter, permitiendo así definir capacidades y permisos dentro del sistema en función del rol del usuario.
+- La aplicación es **escalable** gracias a la capacidad de **MySQL**, que posibilita manejar tráfico y volumen de datos de manera más eficiente que SQLite.
+- Se emplean herramientas para la creación y autenticación de usuarios. Además, existen dos **grupos de usuarios** Requester y Plantsitter, permitiendo así definir capacidades y permisos dentro del sistema en función del rol del usuario.
 
 &nbsp;
 
