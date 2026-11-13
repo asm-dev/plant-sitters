@@ -4,26 +4,26 @@
 
 &nbsp;
 
-Plant Sitters, es una plataforma para poner en contacto a personas que necesitan que algún vecino se pase a cuidar las plantas, dar de comer al gato, o a ahuyentar fantasmas cuando se van de vacaciones. _Plant sitters, cat sitters, house keepers_... el lema es "Te cuidamos la casa cuando no estás".
+Plant Sitters is a platform that connects people who need a neighbor to drop by to water the plants, feed the cat, or chase away ghosts while they are on vacation. _Plant sitters, cat sitters, house keepers_... our motto is "We look after your home when you're away".
 
-Este repositorio alberga el ecosistema back necesario para hacer posible esta actividad. Empleamos **Django** como framework principal para crear el servidor, junto con **REST** (DRF) para los API endpoints y **MySQL** como base de datos.
+This repository hosts the back-end ecosystem needed to make this activity possible. We use **Django** as the main framework to build the server, together with **REST** (DRF) for the API endpoints and **MySQL** as the database.
 
 &nbsp;
 
-## Requisitos previos
+## Prerequisites
 
 - Python 3.9
-- MySQL instalado y en funcionamiento
-- (_Recomendado_) DBeaver para visualizar la BBDD
+- MySQL installed and running
+- (_Recommended_) DBeaver to view the DB
 
 &nbsp;
 
-## Instalación y config
+## Installation and config
 
-1. **Clona** el repositorio en tu máquina local
-2. Crea un **entorno virtual** (si no lo tienes ya). Recomiendo Anaconda, pero también puedes usar venv
-3. Instala las **dependencias** `pip install -r requirements.txt`
-4. Crea la **base de datos** (BBDD) MySQL:
+1. **Clone** the repository to your local machine
+2. Create a **virtual environment** (if you don't have one already). I recommend Anaconda, but you can also use venv
+3. Install the **dependencies** `pip install -r requirements.txt`
+4. Create the MySQL **database** (DB):
 
 ```
 mysql -u root -p
@@ -31,7 +31,7 @@ CREATE DATABASE plantsitters_db;
 EXIT;
 ```
 
-(_Opcional_) Deberías poder acceder a la BBDD con tu usuario root. No obstante, recomendamos crear un usuario específico para el manejo de la misma:
+(_Optional_) You should be able to access the DB with your root user. However, we recommend creating a specific user to manage it:
 
 ```
 mysql -u root -p
@@ -40,40 +40,40 @@ GRANT ALL PRIVILEGES ON plantsitters_db.* TO 'ejemplo_de_usuario'@'localhost';
 FLUSH PRIVILEGES
 ```
 
-5. Actualiza el **environment** desde el fichero `.env` en la raíz del proyecto con los datos de un usuario que tenga permisos para la BBDD. Es decir, el usuario root, o el que hayas creado en el paso anterior.
+5. Update the **environment** from the `.env` file in the project root with the details of a user who has permissions on the DB. That is, the root user, or the one you created in the previous step.
 
 ```
 DB_USER=root
 DB_PASSWORD=contraseña_del_usuario_root
 ```
 
-6. Aplica las **migraciones** para crear las tablas de la BBDD en MySQL: `python manage.py migrate`
-7. Crea un **superusuario** Django. Puedes hacerlo manualmente desde la shell o `python manage.py createsuperuser`, pero hemos creado un comando personalizado que puede ayudarte si no quieres complicaciones: `python manage.py create_super_user`
-8. **Inicia el servidor** de desarrollo `python manage.py runserver`
-9. Diviértete probando el servidor en `http://127.0.0.1:8000/`
+6. Apply the **migrations** to create the DB tables in MySQL: `python manage.py migrate`
+7. Create a Django **superuser**. You can do it manually from the shell or with `python manage.py createsuperuser`, but we have created a custom command that can help you if you want no hassle: `python manage.py create_super_user`
+8. **Start the development server** `python manage.py runserver`
+9. Have fun testing the server at `http://127.0.0.1:8000/`
 
 &nbsp;
 
-> Nota: Para poder gestionar tareas es necesario estar autenticado. Para ello, habrás de añadir un **token** en tus solicitudes al servidor. Puedes conseguirlo facilmente ingresando tus datos de usuario en `api-token-auth/`. También ten en cuenta que para poder destruirlas, será necesario ser admin o el usuario que haya creado las tareas.
+> Note: To manage tasks you need to be authenticated. To do so, you will have to add a **token** to your requests to the server. You can easily get one by entering your user details at `api-token-auth/`. Also keep in mind that to delete tasks, you must be an admin or the user who created them.
 
 &nbsp;
 
-## Detalles técnicos clave
+## Key technical details
 
-- Para agilizar las operaciones CRUD se han utilizado tanto **ViewSets** como **vistas genéricas** para gestionar tareas y usuarios.
-- Existe una **API View propia** que vincula los modelos de usuario y tarea. Permite devolver todas las tareas asociadas a un usuario específico.
-- Se trata de un proyecto **portable**. Usando un archivo `.env` podemos configurar las credenciales de la BBDD de forma segura y flexible sin necesidad de modificar el código fuente. Además el fichero `requirements.txt` facilita la creación de entornos virtuales para la ejecución del proyecto en cualquier sistema.
-- La aplicación es **escalable** gracias a la capacidad de **MySQL**, que posibilita manejar tráfico y volumen de datos de manera más eficiente que SQLite.
-- Se emplean herramientas para la creación y autenticación de usuarios. Además, existen dos **grupos de usuarios** Requester y Plantsitter, permitiendo así definir capacidades y permisos dentro del sistema en función del rol del usuario.
+- To speed up CRUD operations, both **ViewSets** and **generic views** have been used to manage tasks and users.
+- There is a **custom API View** that links the user and task models. It returns all the tasks associated with a specific user.
+- This is a **portable** project. Using a `.env` file we can configure the DB credentials securely and flexibly without modifying the source code. In addition, the `requirements.txt` file makes it easy to create virtual environments to run the project on any system.
+- The application is **scalable** thanks to the capabilities of **MySQL**, which can handle traffic and data volume more efficiently than SQLite.
+- Tools are used for creating and authenticating users. There are also two **user groups**, Requester and Plantsitter, which make it possible to define capabilities and permissions within the system depending on the user's role.
 
 &nbsp;
 
-## Ejemplos de uso
+## Usage examples
 
-_Creación de "tareas" desde `/admin` a la BBDD_
+_Creating "tasks" in the DB from `/admin`_
 
 ![image](https://github.com/user-attachments/assets/e299da3a-d369-4105-b7b8-90cfc2ae6c39)
 
-_Prueba de uso de endpoint para updatar tareas desde `/api`_
+_Testing the endpoint to update tasks from `/api`_
 
 ![image](https://github.com/user-attachments/assets/19d2bcb6-42a3-49f1-b7c7-5484bcbb599e)
